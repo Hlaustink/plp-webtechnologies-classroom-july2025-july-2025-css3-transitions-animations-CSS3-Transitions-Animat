@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tactical HUD Interface</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Tactical HUD</h1>
+    <p>Operator Tools Interface — Module v1.0</p>
+  </header>
+
+  <main>
+
+    <!-- Unit Calculator (Original Area Calculator) -->
+    <section class="module">
+      <h2>Unit Size Calculator</h2>
+      <p>Enter unit dimensions (meters):</p>
+      <input type="number" id="width" placeholder="Width">
+      <input type="number" id="height" placeholder="Height">
+      <button onclick="calculateArea()">Compute</button>
+      <p id="area-result"></p>
+    </section>
+
+    <!-- Comm Relay (Original Text Transformer) -->
+    <section class="module">
+      <h2>Comm Relay</h2>
+      <p>Encrypt/transform incoming messages:</p>
+      <input type="text" id="text-input" placeholder="Transmission...">
+      <div class="btn-group">
+        <button onclick="transformText('upper')">Encrypt UPPER</button>
+        <button onclick="transformText('lower')">Scramble lower</button>
+        <button onclick="transformText('reverse')">Reverse Feed</button>
+      </div>
+      <p id="text-result"></p>
+    </section>
+
+    <!-- Motion Pulse (Original Animation Box) -->
+    <section class="module">
+      <h2>Motion Pulse</h2>
+      <p>Trigger kinetic signal:</p>
+      <button onclick="animateBox()">Activate Pulse</button>
+      <button onclick="resetBox()">Reset</button>
+      <div id="animated-box"></div>
+    </section>
+
+    <!-- ID Card Flip -->
+    <section class="module">
+      <h2>Operator ID Chip</h2>
+      <p>Click to scan:</p>
+      <div class="card-container" onclick="flipCard()">
+        <div class="card-inner">
+          <div class="card-front">
+            <p>ID: FRONT</p>
+          </div>
+          <div class="card-back">
+            <p>ID: BACK</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Trigger -->
+    <section class="module">
+      <h2>System Alert</h2>
+      <button onclick="openModal()">Trigger Alert</button>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p>Operator Alert: This is a system-level modal with animation.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© Tactical Systems Inc. — All rights reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
